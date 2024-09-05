@@ -28,7 +28,7 @@
         <Label text="Start Date" />
         <DatePicker id="startDateInput" valueFormat="yyyy-MM-dd" displayFormat="MMM dd, yyyy" value="{startDate}" />
 
-        <Button text="Update" press="onUpdatePress" />
+        <Button text="UPDATE" press="onUpdatePress" />
         <Button text="Delete" press="onDeletePress" />
         <Button  text="Back" press="onBackPress" />
     </VBox>
