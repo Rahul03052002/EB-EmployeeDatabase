@@ -29,7 +29,7 @@
         <DatePicker id="startDateInput" valueFormat="yyyy-MM-dd" displayFormat="MMM dd, yyyy" value="{startDate}" />
 
         <Button text="UPDATE" press="onUpdatePress" />
-        <Button text="Delete" press="onDeletePress" />
+        <Button text="DELETE" press="onDeletePress" />
         <Button  text="Back" press="onBackPress" />
     </VBox>
 </mvc:View>
