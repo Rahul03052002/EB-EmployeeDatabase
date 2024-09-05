@@ -1,0 +1,205 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar" xmlns:svm="sap.ui.comp.smartvariants">
+    <f:DynamicPage headerExpanded="{/headerExpanded}">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <svm:SmartVariantManagement id="svm" showExecuteOnSelection="true" />
+                </f:heading>
+                <f:expandedContent>
+                    <Label id="expandedLabel" text="No filters active" />
+                </f:expandedContent>
+                <f:snappedContent>
+                    <Label id="snappedLabel" text="No filters active" />
+                </f:snappedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem name="name" label="Name" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox
+                                        name="name"
+                                        selectionChange=".onSelectionChange"
+                                        items="{
+                                            path: '/Employees',
+                                            templateShareable: true
+                                        }"
+                                    >
+                                        <core:Item key="{name}" text="{name}"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem name="jobTitle" label="Job Title" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox
+                                        name="JobTitle"
+                                        selectionChange=".onSelectionChange"
+                                        items="{
+                                            path: '/Employees',
+                                            templateShareable: true
+                                        }"
+                                    >
+                                        <core:Item key="{jobTitle}" text="{jobTitle}"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem name="BloodGroup" label="Blood Group" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox
+                                        name="BloodGroup"
+                                        selectionChange=".onSelectionChange"
+                                        items="{
+                                            path: '/Employees',
+                                            templateShareable: true
+                                        }"
+                                    >
+                                        <core:Item key="{BloodGroup}" text="{BloodGroup}"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem name="ID" label="ID" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox
+                                        name="ID"
+                                        selectionChange=".onSelectionChange"
+                                        items="{
+                                            path: '/Employees',
+                                            templateShareable: true
+                                        }"
+                                    >
+                                        <core:Item key="{ID}" text="{ID}"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                             <fb:FilterGroupItem name="email" label="email" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox
+                                        name="email"
+                                        selectionChange=".onSelectionChange"
+                                        items="{
+                                            path: '/Employees',
+                                            templateShareable: true
+                                        }"
+                                    >
+                                        <core:Item key="{email}" text="{email}"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                             <fb:FilterGroupItem name="phoneNumber" label="phoneNumber" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox
+                                        name="phoneNumber"
+                                        selectionChange=".onSelectionChange"
+                                        items="{
+                                            path: '/Employees',
+                                            templateShareable: true
+                                        }"
+                                    >
+                                        <core:Item key="{phoneNumber}" text="{phoneNumber}"/>
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <VBox>
+                <Toolbar>
+                    <ToolbarSpacer />
+                    <Label text="Sort by:" />
+                    <Select id="sortSelect" change=".onSort" width="200px">
+                        <items>
+                            <core:Item key="ID" text="ID" />
+                            <core:Item key="name" text="Name" />
+                            <core:Item key="jobTitle" text="Job Title" />
+                            <core:Item key="BloodGroup" text="Blood Group" />
+                            <core:Item key="email" text="email" />
+                            <core:Item key=" phoneNumber" text=" phoneNumber" />
+                            <core:Item key="address" text="address" />
+                            <core:Item key="startDate" text="startDate" />
+                        </items>
+                    </Select>
+                    <ToolbarSpacer />
+                </Toolbar>
+                <Table
+                    id="employeeTable"
+                    inset="false"
+                    width="auto"
+                    items="{/Employees}"
+                    mode="MultiSelect">
+                    <columns>
+                        <Column>
+                            <header>
+                                <Label text="ID" />
+                            </header>
+                        </Column>
+                        <Column>
+                            <header>
+                                <Label text="Name" />
+                            </header>
+                        </Column>
+                        <Column>
+                            <header>
+                                <Label text="Email" />
+                            </header>
+                        </Column>
+                        <Column>
+                            <header>
+                                <Label text="Job Title" />
+                            </header>
+                        </Column>
+                        <Column>
+                            <header>
+                                <Label text="Blood Group" />
+                            </header>
+                        </Column>
+                        <Column>
+                            <header>
+                                <Label text="Phone Number" />
+                            </header>
+                        </Column>
+                        <Column>
+                            <header>
+                                <Label text="Address" />
+                            </header>
+                        </Column>
+                        <Column>
+                            <header>
+                                <Label text="Start Date" />
+                            </header>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Navigation" press="onItemPress">
+                            <cells>
+                                <Text text="{ID}" />
+                                <Text text="{name}" />
+                                <Text text="{email}" />
+                                <Text text="{jobTitle}" />
+                                <Text text="{BloodGroup}" />
+                                <Text text="{phoneNumber}" />
+                                <Text text="{address}" />
+                                <Text text="{startDate}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                
+                <!-- New fields and buttons for managing employees -->
+                
+                <HBox>
+                    <Button text="Add Employee" press="onAdd" />
+                    <Button text="Update" press="onUpdate" />
+                    <Button text="Delete" press="onDelete" />
+                </HBox>
+            </VBox>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

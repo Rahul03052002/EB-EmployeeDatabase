@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="project1.controller.EmployeeView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <VBox>
+        <Label text="ID" />
+        <Input id="idInput" editable="false" value="{ID}" />
+
+        <Label text="Name" />
+        <Input id="nameInput" value="{name}" />
+
+        <Label text="Email" />
+        <Input id="emailInput" value="{email}" />
+
+        <Label text="Job Title" />
+        <Input id="jobTitleInput" value="{jobTitle}" />
+
+        <Label text="Blood Group" />
+        <Input id="bloodGroupInput" value="{BloodGroup}" />
+
+        <Label text="Phone Number" />
+        <Input id="phoneNumberInput" value="{phoneNumber}" />
+
+        <Label text="Address" />
+        <Input id="addressInput" value="{address}" />
+
+        <Label text="Start Date" />
+        <DatePicker id="startDateInput" valueFormat="yyyy-MM-dd" displayFormat="MMM dd, yyyy" value="{startDate}" />
+
+        <Button text="Update" press="onUpdatePress" />
+        <Button text="Delete" press="onDeletePress" />
+        <Button  text="Back" press="onBackPress" />
+    </VBox>
+</mvc:View>
